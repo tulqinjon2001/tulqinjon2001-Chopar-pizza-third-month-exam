@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./styles/bootstrap.min.css">
+
+</head>
+
+<body>
+  <div class="pizza d-flex align-items-center justify-content-center">
+    <div class="pizza__container container row">
+      <h2 class="pizza__heading h1 text-center py-5">Pitsa buyurtma qilish</h2>
+
+      <form class="pizza__form col-8 border-end border-4 border-dark rounded-0 bg-info p-3" action="https://echo.htmlacademy.ru" method="POST" id="pizza_chopar">
+        <!-- Select box -->
+
+        <div class="pizza__select-box">
+          <h3 class="pizza__select-heading fw-bold fs-5" for="select-label">Noni qanday bo'lsin ?</h3>
+
+          <select class="pizza__select form-control w-50 mt-3 fs-5" aria-label="Default select example" name="Select-bread"></select>
+
+          <span class="pizza__select opacity-50">Tanlang!</span>
+        </div>
+
+        <!-- Pizza size -->
+
+        <div class="pizza__size mt-4">
+          <h3 class="pizza__size-heading fw-bold fs-5" for="select-label">Kattaligi:</h3>
+
+          <label class="pizza__size-label mb-4 pt-3 d-flex align-items-center">
+            <input type="text" name="Select-size" hidden>
+          </label>
+        </div>
+
+        <!-- productions -->
+
+        <div class="pizza__productions">
+          <h3 class="pizza__product-heading fw-bold fs-5" for="select-label">Ustiga nimalar solaylik ?</h3>
+          
+          <!-- Pomidor uchun -->
+          <div class="pizza__product-checkboxs d-flex flex-column fs-5">
+            <div class="product-check-box">
+              <input class="product-check" style="width: 20px; height: 20px;" type="checkbox" name="checkbox" id="check-product-1">
+              <label class="product-check-span" for="check-product-1"></label>
+            </div>
+  
+            <!-- Tuzlangan bodring uchun -->
+            <div class="product-check-bo">
+              <input class="product-check" style="width: 20px; height: 20px;" type="checkbox" name="checkbox" id="check-product-2">
+              <label class="product-check-span" for="check-product-2"></label>
+            </div>
+
+            <!-- Kurka go'shti uchun -->
+            <div class="product-check-box">
+              <input class="product-check" style="width: 20px; height: 20px;" type="checkbox" name="checkbox" id="check-product-3">
+              <label class="product-check-span" for="check-product-3"></label>
+            </div>
+
+            <!-- Qo'ziqorin uchun -->
+            <div class="product-check-box">
+              <input class="product-check" style="width: 20px; height: 20px;" type="checkbox" name="checkbox" id="check-product-4">
+              <label class="product-check-span" for="check-product-4"></label>
+            </div>
+
+            <!--  Zaytun uchun -->
+            <div class="product-check-box">
+              <input class="product-check" style="width: 20px; height: 20px;" type="checkbox" name="checkbox" id="check-product-5">
+              <label class="product-check-span" for="check-product-5"></label>
+            </div>
+
+            <!--  Qazi uchun -->
+            <div class="product-check-box">
+              <input class="product-check" style="width: 20px; height: 20px;" type="checkbox" name="checkbox" id="check-product-6">
+              <label class="product-check-span"  for="check-product-6"></label>
+            </div>
+          </div>
+        </div>
+
+        <div class="pizza__extra-productions">
+          <div class="pizza__extra-productions">
+            <h3 class="pizza__extra-product-heading fw-bold fs-5" for="select-label">Qo'shimchalar</h3>
+            
+            <!-- Achchiq uchun -->
+            <div class="pizza__extra-product-checkboxs d-flex flex-column">
+              <div class="product-extra-check-box fs-4">
+                <input class="product-extra-check" style="width: 20px; height: 20px;" type="checkbox" name="extra_checkbox" id="check-extra-product-1">
+                <label class="product-extra-check-span" for="check-extra-product-1"></label>
+              </div>
+    
+              <!-- Sasiska uchun -->
+              <div class="product-extra-check-box fs-4">
+                <input class="product-extra-check" style="width: 20px; height: 20px;" type="checkbox" name="extra_checkbox" id="check-extra-product-2">
+                <label class="product-extra-check-span" for="check-extra-product-2"></label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+
+      <div class="pizza__output-box  col-4 bg-warning p-3">
+        <output class="mb-3 d-block" id="output_bread">
+          <!-- Select bread Output -->
+          <div class="selectBox" style="height: 54px;">
+            <h3 class="d-inline-block me-3 fs-4">Noni: </h3><span class="pizza__output-bread fs-4 opacity-50"></span>
+          </div>
+        </output>
+
+        <output class="mb-3 d-block" id="output_size">
+              <!-- Radio size Output -->
+          <div class="sizeBox" style="height: 60px;">
+            <h3 class="d-inline-block me-3 fs-4">Hajmi: </h3><span class="pizza__output-size fs-4 opacity-50"></span>
+          </div>
+        </output>
+
+        <output class="mb-3 d-block" id="output_product">
+              <!-- Product checkbox Output -->
+          <div class="productsBox" style="height: 300px;">
+            <h3 class="fs-4">Ustida: </h3><ul class="pizza__output-product list-unstyled fs-6 f-sm-5 fs-4"></ul>
+          </div>
+        </output>
+
+        <output class=" d-block" id="output_extra_product">
+          <!-- Extra Product checkbox Output -->
+          <div class="extraProductsBox" style="height: 120px;">
+            <h3 class="fs-4">Qo'shimcha: </h3><ul class="pizza__output-extra-product list-unstyled fs-6 f-sm-5 fs-4"></ul>
+          </div>
+        </output>
+
+        <button class="btn text-bg-light p-sm-1 p-md-2 p-lg-3" style="background-color: #c85d16;" type="submit" form="pizza_chopar">Buyurtma berish</button>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <script src="./js/script.js"></script>
+</body>
+</html>
